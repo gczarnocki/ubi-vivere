@@ -2,7 +2,7 @@
 
 namespace HackathonServer.Dtos
 {
-    public class RecordDto
+    public class EducationFacilityDto
     {
         [DataMember(Name = "_id")]
         public int Id { get; set; }

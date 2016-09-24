@@ -11,7 +11,7 @@ namespace HackathonServer.Dtos
         [DataMember(Name = "fields")]
         public List<FieldDto> Fields { get; set; }
         [DataMember(Name = "records")]
-        public List<RecordDto> Records { get; set; }
+        public List<EducationFacilityDto> Records { get; set; }
         [DataMember(Name = "_links")]
         public List<LinkDto> Links { get; set; }
         [DataMember(Name = "offset")]

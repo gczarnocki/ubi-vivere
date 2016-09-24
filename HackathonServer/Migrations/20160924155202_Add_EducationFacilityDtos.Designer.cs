@@ -8,9 +8,10 @@ using HackathonServer.Models;
 namespace HackathonServer.Migrations
 {
     [DbContext(typeof(HackathonContext))]
-    partial class HackathonContextModelSnapshot : ModelSnapshot
+    [Migration("20160924155202_Add_EducationFacilityDtos")]
+    partial class Add_EducationFacilityDtos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

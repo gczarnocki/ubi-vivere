@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HackathonServer.Dtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace HackathonServer.Models
@@ -14,5 +15,6 @@ namespace HackathonServer.Models
         }
 
         public DbSet<ExampleModel> Examples { get; set; }
+        public DbSet<EducationFacilityDto> EducationFacilityDtos { get; set; }
     }
 }

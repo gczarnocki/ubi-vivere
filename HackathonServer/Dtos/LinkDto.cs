@@ -2,6 +2,7 @@
 
 namespace HackathonServer.Dtos
 {
+    [DataContract]
     public class LinkDto
     {
         [DataMember(Name = "start")]
