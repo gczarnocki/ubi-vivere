@@ -178,9 +178,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201609241839378_InitialMigration.cs" />
-    <Compile Include="Migrations\201609241839378_InitialMigration.Designer.cs">
-      <DependentUpon>201609241839378_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201609242111147_InitialMigration.cs" />
+    <Compile Include="Migrations\201609242111147_InitialMigration.Designer.cs">
+      <DependentUpon>201609242111147_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseInitializer.cs" />
@@ -255,15 +255,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609241839378_InitialMigration.resx">
-      <DependentUpon>201609241839378_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609242111147_InitialMigration.resx">
+      <DependentUpon>201609242111147_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
