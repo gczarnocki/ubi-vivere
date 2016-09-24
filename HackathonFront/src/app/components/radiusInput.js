@@ -3,13 +3,19 @@ angular.module('app.components')
     templateUrl: 'app/components/radiusInput.html',
     controller: RadiusInputCtrl,
     bindings: {
-      value: '<'
+      radius: '='
     }
   })
 
 function RadiusInputCtrl () {
   var vm = this;
-  vm.value = 1;
+  vm.radius = 1;
+  vm.inputRadius = 1;
+
+  vm.updateRadius = function(r) {
+    vm.radius = Math.max(r,0);
+    vm.inputRadius = vm.radius;
+   };
 
   return vm
 }
