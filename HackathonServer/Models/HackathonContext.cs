@@ -11,7 +11,7 @@ namespace HackathonServer.Models
     {
         public HackathonContext() : base("name=HackathonContext")
         {
-            
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
