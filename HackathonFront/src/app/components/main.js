@@ -1,1 +1,1 @@
-angular.module('app.components', []);
+angular.module('app.components', ['ngMap']);
