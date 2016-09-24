@@ -178,6 +178,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609242147497_Initial.cs" />
+    <Compile Include="Migrations\201609242147497_Initial.Designer.cs">
+      <DependentUpon>201609242147497_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseInitializer.cs" />
     <Compile Include="Models\HackathonContext.cs" />
@@ -262,8 +266,8 @@
     <Content Include="Scripts\jquery-3.1.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609242129267_Initial.resx">
-      <DependentUpon>201609242129267_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609242147497_Initial.resx">
+      <DependentUpon>201609242147497_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
