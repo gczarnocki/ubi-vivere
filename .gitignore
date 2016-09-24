@@ -80,3 +80,4 @@ _[Ss]cripts
 
 /App_Data/*.mdf
 /App_Data/*.ldf
+/App_Data/*.*
