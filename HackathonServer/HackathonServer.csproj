@@ -178,6 +178,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Migrations\201609242111147_InitialMigration.cs" />
+    <Compile Include="Migrations\201609242111147_InitialMigration.Designer.cs">
+      <DependentUpon>201609242111147_InitialMigration.cs</DependentUpon>
+    </Compile>
+>>>>>>> af2232121605caca0367c7158e414aa90b3f2811
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseInitializer.cs" />
     <Compile Include="Models\HackathonContext.cs" />
@@ -255,6 +262,11 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609242111147_InitialMigration.resx">
+      <DependentUpon>201609242111147_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
