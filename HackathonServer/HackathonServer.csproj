@@ -160,11 +160,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Dtos\EducationFacilityDto.cs" />
-    <Compile Include="Dtos\FieldDto.cs" />
     <Compile Include="Dtos\InnerResultDto.cs" />
     <Compile Include="Dtos\KeyValueDto.cs" />
     <Compile Include="Dtos\LinkDto.cs" />
     <Compile Include="Dtos\ResultDto.cs" />
+    <Compile Include="Dtos\TypeIdDto.cs" />
     <Compile Include="Dtos\ValuesDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

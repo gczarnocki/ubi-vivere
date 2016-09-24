@@ -10,6 +10,6 @@ namespace HackathonServer.Dtos
     public class ResultDto
     {
         [DataMember(Name = "result")]
-        public List<InnerResultDto> InnerResult { get; set; }
+        public InnerResultDto InnerResult { get; set; }
     }
 }

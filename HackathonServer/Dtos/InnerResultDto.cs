@@ -12,7 +12,7 @@ namespace HackathonServer.Dtos
         [DataMember(Name = "resource_id")]
         public string ResourceId { get; set; }
         [DataMember(Name = "fields")]
-        public List<KeyValueDto> Fields { get; set; }
+        public List<TypeIdDto> Fields { get; set; }
         [DataMember(Name = "records")]
         public List<EducationFacilityDto> EducationFacilityDtos { get; set; }
         [DataMember(Name = "_links")]
