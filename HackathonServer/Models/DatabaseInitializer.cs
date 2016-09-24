@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Web;
 using HackathonServer.Dtos;
+using HackathonServer.Properties;
 using HackathonServer.Shared;
 using Newtonsoft.Json;
 
@@ -14,13 +11,35 @@ namespace HackathonServer.Models
 {
     public static class DatabaseInitializer
     {
+        public static void Seed(HackathonContext context)
+        {
+            BusStopsSeed(context);
+            EducationFacilitiesSeed(context);
+        }
+
         public static void BusStopsSeed(HackathonContext context)
         {
-            var busStops = new List<BusStopDto> {new BusStopDto() {Y = 3.3, X = 2.2}};
-
-            foreach (var item in busStops)
+            using (var sr = new StringReader(Resources.rozklad))
             {
-                context.BusStops.AddOrUpdate(item);
+                while (sr.Peek() >= 0)
+                {
+                    var line = sr.ReadLine();
+                    if (!line.Contains("Y="))
+                    {
+                        continue;
+                    }
+                    try
+                    {
+                        var y = double.Parse(line.Substring(line.IndexOf("Y=") + 3, 9).Replace(".", ","));
+                        var x = double.Parse(line.Substring(line.IndexOf("X=") + 3, 9).Replace(".", ","));
+
+                        context.BusStops.AddOrUpdate(new BusStopDto() {Y = y, X = x});
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
+                }
             }
 
             context.SaveChanges();

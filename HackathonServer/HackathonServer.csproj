@@ -186,6 +186,11 @@
     <Compile Include="Models\DatabaseInitializer.cs" />
     <Compile Include="Models\HackathonContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Shared\ApiKeys.cs" />
     <Compile Include="Shared\Requestor.cs" />
   </ItemGroup>
@@ -263,6 +268,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609242147497_Initial.resx">
       <DependentUpon>201609242147497_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

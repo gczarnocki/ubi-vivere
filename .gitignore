@@ -79,3 +79,5 @@ _[Ss]cripts
 ##########
 
 HackathonServer/App_Data
+*.mdf
+*.ldf

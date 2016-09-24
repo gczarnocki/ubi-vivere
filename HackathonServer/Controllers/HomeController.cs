@@ -17,7 +17,7 @@ namespace HackathonServer.Controllers
 
             using (var context = new HackathonContext())
             {
-                DatabaseInitializer.AnotherSeed(context);
+                DatabaseInitializer.EducationFacilitiesSeed(context);
             }
 
             return View();
