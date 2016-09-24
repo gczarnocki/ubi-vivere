@@ -159,10 +159,20 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Dtos\EducationFacilityDto.cs" />
+    <Compile Include="Dtos\FieldDto.cs" />
+    <Compile Include="Dtos\InnerResultDto.cs" />
+    <Compile Include="Dtos\KeyValueDto.cs" />
+    <Compile Include="Dtos\LinkDto.cs" />
+    <Compile Include="Dtos\ResultDto.cs" />
+    <Compile Include="Dtos\ValuesDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\ApiKeys.cs" />
+    <Compile Include="Shared\Requestor.cs" />
+    <Compile Include="Shared\SeedData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
