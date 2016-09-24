@@ -31,5 +31,7 @@ namespace HackathonServer.Models
         }
 
         public virtual DbSet<EducationFacilityDto> EducationFacilities { get; set; }
+
+        public virtual DbSet<BusStopDto> BusStops { get; set; }
     }
 }
