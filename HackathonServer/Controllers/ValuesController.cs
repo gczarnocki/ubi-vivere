@@ -13,10 +13,6 @@ namespace HackathonServer.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            using (var context = new HackathonContext())
-            {
-                DatabaseInitializer.Seed(context);
-            }
             return new string[] { "value1", "value2" };
         }
 
