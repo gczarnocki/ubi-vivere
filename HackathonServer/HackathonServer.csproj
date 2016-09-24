@@ -178,19 +178,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Migrations\201609242129267_Initial.cs" />
-    <Compile Include="Migrations\201609242129267_Initial.Designer.cs">
-      <DependentUpon>201609242129267_Initial.cs</DependentUpon>
-=======
-<<<<<<< HEAD
-=======
-    <Compile Include="Migrations\201609242111147_InitialMigration.cs" />
-    <Compile Include="Migrations\201609242111147_InitialMigration.Designer.cs">
-      <DependentUpon>201609242111147_InitialMigration.cs</DependentUpon>
->>>>>>> 68467ef0f30f38bbe3785ddff2c1241517a36259
-    </Compile>
->>>>>>> af2232121605caca0367c7158e414aa90b3f2811
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseInitializer.cs" />
     <Compile Include="Models\HackathonContext.cs" />
