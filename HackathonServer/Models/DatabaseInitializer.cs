@@ -2,6 +2,7 @@
 using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using HackathonServer.Dtos;
 using HackathonServer.Properties;
 using HackathonServer.Shared;
@@ -40,9 +41,9 @@ namespace HackathonServer.Models
                         continue;
                     }
                 }
-            }
 
-            context.SaveChanges();
+                context.SaveChanges(); // duplicate key exception while inserting!
+            }
         }
 
         public static void EducationFacilitiesSeed(HackathonContext context)
