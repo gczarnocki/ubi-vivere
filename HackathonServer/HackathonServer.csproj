@@ -182,11 +182,11 @@
       <DependentUpon>201609241839378_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DatabaseInitializer.cs" />
     <Compile Include="Models\HackathonContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\ApiKeys.cs" />
     <Compile Include="Shared\Requestor.cs" />
-    <Compile Include="Shared\SeedData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

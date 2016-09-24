@@ -11,12 +11,23 @@ namespace HackathonServer.Models
     {
         public HackathonContext() : base("name=HackathonContext")
         {
-
+            Database.SetInitializer<HackathonContext>(new DropCreateDatabaseAlways<HackathonContext>());
+            InitializeDatabase();
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public HackathonContext(string connectionString) : base(connectionString)
         {
-            base.OnModelCreating(modelBuilder);
+            Database.Connection.ConnectionString = connectionString;
+            InitializeDatabase();
+        }
+
+        private void InitializeDatabase()
+        {
+            if (!Database.Exists())
+            {
+                Database.Initialize(true);
+                DatabaseInitializer.Seed(this);
+            }
         }
 
         public virtual DbSet<EducationFacilityDto> EducationFacilities { get; set; }
