@@ -26,6 +26,17 @@ namespace HackathonServer.Models
                 context.EducationFacilities.AddOrUpdate(item);
             }
 
+            //////////////////////////////BusStops
+
+            var busStops = new List<BusStopDto>();
+
+            busStops.Add(new BusStopDto() { Y = 3.3, X = 2.2 });
+
+            foreach (var item in busStops)
+            {
+                context.BusStops.AddOrUpdate(item);
+            }
+
             context.SaveChanges();
         }
     }
