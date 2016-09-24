@@ -3,7 +3,7 @@ angular.module('app.components')
     templateUrl: 'app/components/weighSlider.html',
     controller: WeighSliderCtrl,
     bindings: {
-      value: '<'
+      weigh: '='
     }
   })
 
