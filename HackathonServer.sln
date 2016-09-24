@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonServer", "HackathonServer\HackathonServer.csproj", "{B0F71B77-305A-49D0-8DF8-C7BBF77D7AD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonServer", "HackathonServer\HackathonServer.csproj", "{A8508E7D-4654-4ED4-8914-8BA15CBBD177}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B0F71B77-305A-49D0-8DF8-C7BBF77D7AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0F71B77-305A-49D0-8DF8-C7BBF77D7AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0F71B77-305A-49D0-8DF8-C7BBF77D7AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0F71B77-305A-49D0-8DF8-C7BBF77D7AD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8508E7D-4654-4ED4-8914-8BA15CBBD177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8508E7D-4654-4ED4-8914-8BA15CBBD177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8508E7D-4654-4ED4-8914-8BA15CBBD177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8508E7D-4654-4ED4-8914-8BA15CBBD177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
