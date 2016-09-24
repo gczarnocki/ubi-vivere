@@ -1,1 +1,1 @@
-angular.module('app.components', ['ngMap']);
+angular.module('app.components', ['ngMap', "rzModule"]);

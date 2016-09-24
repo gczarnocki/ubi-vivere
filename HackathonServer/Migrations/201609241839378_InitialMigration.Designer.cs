@@ -13,7 +13,7 @@ namespace HackathonServer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201609241720217_InitialMigration"; }
+            get { return "201609241839378_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source
