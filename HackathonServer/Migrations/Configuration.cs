@@ -1,3 +1,5 @@
+using HackathonServer.Models;
+
 namespace HackathonServer.Migrations
 {
     using System;
@@ -14,6 +16,8 @@ namespace HackathonServer.Migrations
 
         protected override void Seed(HackathonServer.Models.HackathonContext context)
         {
+            DatabaseInitializer.Seed(context);
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
