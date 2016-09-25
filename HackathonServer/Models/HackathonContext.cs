@@ -12,7 +12,7 @@ namespace HackathonServer.Models
     {
         public HackathonContext() : base("name=HackathonContext")
         {
-            Database.SetInitializer<HackathonContext>(new DropCreateDatabaseIfModelChanges<HackathonContext>());
+            Database.SetInitializer<HackathonContext>(new CreateDatabaseIfNotExists<HackathonContext>());
             InitializeDatabase();
         }
 
