@@ -52,6 +52,8 @@ namespace HackathonServer.Controllers
         public PointDto[] Get(int busStopWeight, int busStopRadius, int educationWeight, int educationRadius)
         {
             var buspoints = new List<PointDto>();
+            var hash = new Tuple<HashSet<PointDto>, Dictionary<PointDto, int>>(new HashSet<PointDto>(),
+                new Dictionary<PointDto, int>());
             var educationspoints = new List<PointDto>();
             var mingrad = Math.Min(educationRadius, busStopRadius)/GRADATION;
             var gradX = mingrad/xMultiplier;
@@ -72,6 +74,17 @@ namespace HackathonServer.Controllers
                     {
                         for (var j = starty; j < education.Longitude + educationRadiusConvertedY; j += gradY)
                         {
+                            /*for (int k = 0; k < educationWeight; k++)
+                            {
+                                if (hash.Item1.Add(new PointDto() {X = i, Y = j}))
+                                {
+                                    hash.Item2.Add(new PointDto(), 0);
+                                }
+                                else
+                                {
+                                    hash.Item2[new PointDto() {X = i, Y = j}]++;
+                                }
+                            }*/
                             educationspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, educationWeight));
                         }
                     }
@@ -95,13 +108,28 @@ namespace HackathonServer.Controllers
             var edupo = educationspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
             var buspo = buspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
             var points = new List<PointDto>();
-            foreach (var edu in edupo)
+            if (busStopWeight != 0 && educationWeight != 0)
             {
-                foreach (var bu in buspo.Where(bu => bu.Point.Equals(edu.Point)))
+                foreach (var edu in edupo)
                 {
-                    points.AddRange(Enumerable.Repeat(edu.Point, edu.Count+bu.Count));
+                    foreach (var bu in buspo.Where(bu => bu.Point.Equals(edu.Point)))
+                    {
+                        points.AddRange(Enumerable.Repeat(edu.Point, edu.Count + bu.Count));
+                    }
                 }
             }
+            else
+            {
+                if (busStopWeight == 0)
+                {
+                    points.AddRange(educationspoints);
+                }
+                else
+                {
+                    points.AddRange(buspoints);
+                }
+            }
+            
             return points.ToArray();
         }
     }
