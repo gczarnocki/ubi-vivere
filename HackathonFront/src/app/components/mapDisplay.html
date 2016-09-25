@@ -1,4 +1,3 @@
-<div map-lazy-load="https://maps.google.com/maps/api/js"
-  map-lazy-load-params="{{mapDisplay.googleMapsUrl}}">
-  <ng-map center="41,-87" zoom="3"></ng-map>
-</div>
+<ng-map zoom="13" center="37.774546, -122.433523" map-type-id="SATELLITE">
+</ng-map>
+<a ng-click="mapDisplay.showHeatmap(mapDisplay.map, mapDisplay.data)">Load data!</a>

@@ -5,7 +5,6 @@
     <title>'); Drop Table `Teams`; - Hackathon App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
     <!-- build:css({.tmp,src}) styles/vendor.css -->
     <!-- bower:css -->
     <!-- run `gulp inject` to automatically populate bower styles dependencies -->
@@ -18,10 +17,11 @@
   </head>
 
 
-  <body ng-app="app">
+  <body>
+  <div id="app">
     <app>Loading...</app>
+  </div>
   </body>
-
   <!-- build:js({.tmp,src}) scripts/vendor.js -->
   <!-- bower:js -->
   <!-- run `gulp inject` to automatically populate bower script dependencies -->
@@ -36,5 +36,12 @@
   <!-- angular templates will be automatically converted in js and inserted here -->
   <!-- endinject -->
   <!-- endbuild -->
+<script type="text/javascript">
+function onGoogleReady() {
+  console.log('bootstrap!')
+  angular.bootstrap(document.getElementById("app"), ['app']);
+}
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady&libraries=visualization"></script>
 </html>
 
