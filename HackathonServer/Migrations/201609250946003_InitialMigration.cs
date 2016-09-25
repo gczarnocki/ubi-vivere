@@ -7,8 +7,8 @@ namespace HackathonServer.Migrations
     {
         public override void Up()
         {
-            DropTable("dbo.EducationFacility");
-            DropTable("dbo.BusStopDto");
+            // DropTable("dbo.EducationFacility");
+            // DropTable("dbo.BusStopDto");
 
             CreateTable(
                 "dbo.BusStopDto",
