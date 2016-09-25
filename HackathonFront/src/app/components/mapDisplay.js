@@ -10,13 +10,22 @@ function MapDisplayController(NgMap, constants) {
 
   vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=" + constants.GOOGLE_API_KEY;
   vm.showHeatmap = showHeatmap;
-  vm.data = [new google.maps.LatLng(37.774546, -122.433523)];
+  vm.data = [
+    new google.maps.LatLng(37.774546, -122.433523),
+    new google.maps.LatLng(37.774546, -122.433523),
+    new google.maps.LatLng(37.774546, -122.443523),
+    new google.maps.LatLng(37.774546, -122.453523)
+  ];
+
+  function createDataFromArray(array) {
+
+  };
 
   function showHeatmap(map, data) {
     heatmap = new google.maps.visualization.HeatmapLayer();
     heatmap.setData(data);
     heatmap.setMap(map);
-  }
+  };
 
   NgMap.getMap().then(function(map) {
       vm.map = map;

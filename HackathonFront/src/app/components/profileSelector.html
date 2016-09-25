@@ -1,8 +1,5 @@
-<div class="container profileSelector">
-  <div class="col-sm-3">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-  </div>
-  <div class="col-sm-9">
-    <h4>I am a {{ profile.name }}</h4>
-  </div>
+<div class="container-fluid">
+  <h3>Wybierz odpowiadający Ci profil...</h3>
+  <profile-type ng-repeat="profile in profileSelector.profiles" profile="profile" on-select="profileSelector.selectProfile($index)"></profile-type>
+  <h3><a ng-click="profileSelector.toggleMode()">...Lub weź sprawy w swoje ręce! &raquo;</a></h3>
 </div>
