@@ -13,6 +13,6 @@ namespace HackathonServer.Shared
         public static string GoogleMapsApiKey = "AIzaSyDFxZWwXQnfF4ar4ZpFC186UAv9y6yJrI8";
         public static string GoogleMapsApiKeyParam = $"&key={GoogleMapsApiKey}";
 
-        public static string googleMapsUrl => "https://maps.googleapis.com/maps/api/geocode/json/?address=";
+        public static string googleMapsUrl => "https://maps.googleapis.com/maps/api/geocode/json?address=";
     }
 }

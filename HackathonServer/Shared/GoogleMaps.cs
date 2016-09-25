@@ -16,11 +16,11 @@ namespace HackathonServer.Shared
     {
         public static GMapsLocationDto RetrieveDataFromGoogleMaps(EducationFacility facility)
         {
-            var url = $"{ApiKeys.googleMapsUrl}{facility.Street.Replace(' ', '+')},+{facility.StreetNumber.Replace(' ', '+')},+{facility.City.Replace(' ', '+')}";
+            var url = $"{ApiKeys.googleMapsUrl}{facility.Street.Replace(' ', '+')}+{facility.StreetNumber.Replace(' ', '+')},+{facility.City.Replace(' ', '+')}{ApiKeys.GoogleMapsApiKeyParam}";
             var response = Requestor.CreateRequest(url).Result;
             var jsonObj = JsonConvert.DeserializeObject<GMapsResults>(response);
 
-            return jsonObj.Results[0].Geometry.Location;
+            return jsonObj.Results.Count > 0 ? jsonObj.Results[0].Geometry.Location : null;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace HackathonServer.Models
         public static void Seed(HackathonContext context)
         {
             // BusStopsSeed(context);
-            //EducationFacilitiesSeed(context);
+            EducationFacilitiesSeed(context);
         }
 
         public static void BusStopsSeed(HackathonContext context)
@@ -56,7 +56,7 @@ namespace HackathonServer.Models
 
             int total = jsonObj.InnerResult.Total;
 
-            for (int i = 0; i < total; i += 100)
+            for (int i = 500; i < total; i += 100)
             {
                 var requestUrl = url + "&offset=" + i;
                 response = Requestor.CreateRequest(requestUrl).Result;
@@ -66,11 +66,15 @@ namespace HackathonServer.Models
 
                 foreach (var item in jsonObj.InnerResult.EducationFacilityDtos)
                 {
-                    context.EducationFacilities.AddOrUpdate(item);
-
                     GMapsLocationDto location = GoogleMaps.RetrieveDataFromGoogleMaps(item);
-                    item.Longitude = location.Longitude;
-                    item.Latitude = location.Latitude;
+
+                    if (location != null)
+                    {
+                        item.Longitude = location.Longitude;
+                        item.Latitude = location.Latitude;
+                    }
+
+                    context.EducationFacilities.AddOrUpdate(item);
                 }
 
                 context.SaveChanges();
