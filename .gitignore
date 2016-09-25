@@ -78,4 +78,4 @@ _[Ss]cripts
 # Others #
 ##########
 
-HackathonServer/App_Data
+HackathonServer/App_Data/*.*
