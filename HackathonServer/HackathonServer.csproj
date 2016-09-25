@@ -173,6 +173,10 @@
     <Compile Include="Dtos\GMaps\GMapsInnerResult.cs" />
     <Compile Include="Dtos\GMaps\GMapsLocationDto.cs" />
     <Compile Include="Dtos\GMaps\GMapsResults.cs" />
+    <Compile Include="Migrations\201609250946003_InitialMigration.cs" />
+    <Compile Include="Migrations\201609250946003_InitialMigration.Designer.cs">
+      <DependentUpon>201609250946003_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\EducationFacility.cs" />
     <Compile Include="Dtos\InnerResultDto.cs" />
     <Compile Include="Dtos\KeyValueDto.cs" />
@@ -268,6 +272,9 @@
     <Content Include="Scripts\jquery-3.1.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609250946003_InitialMigration.resx">
+      <DependentUpon>201609250946003_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

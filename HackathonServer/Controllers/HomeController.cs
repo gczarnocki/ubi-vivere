@@ -16,6 +16,11 @@ namespace HackathonServer.Controllers
         {
             ViewBag.Title = "Home Page";
 
+            using (var context = new HackathonContext())
+            {
+                DatabaseInitializer.EducationFacilitiesSeed(context);
+            }
+
             return View();
         }
     }
