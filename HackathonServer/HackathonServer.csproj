@@ -165,10 +165,19 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\EducationFacilityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Dtos\BusStopDto.cs" />
-    <Compile Include="Dtos\EducationFacilityDto.cs" />
+    <Compile Include="Dtos\GMaps\GMapsGeometryDto.cs" />
+    <Compile Include="Dtos\GMaps\GMapsInnerResult.cs" />
+    <Compile Include="Dtos\GMaps\GMapsLocationDto.cs" />
+    <Compile Include="Dtos\GMaps\GMapsResults.cs" />
+    <Compile Include="Migrations\201609250025427_Alter_EducationFacility.cs" />
+    <Compile Include="Migrations\201609250025427_Alter_EducationFacility.Designer.cs">
+      <DependentUpon>201609250025427_Alter_EducationFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EducationFacility.cs" />
     <Compile Include="Dtos\InnerResultDto.cs" />
     <Compile Include="Dtos\KeyValueDto.cs" />
     <Compile Include="Dtos\LinkDto.cs" />
@@ -192,6 +201,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Shared\ApiKeys.cs" />
+    <Compile Include="Shared\GoogleMaps.cs" />
     <Compile Include="Shared\Requestor.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +278,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609242147497_Initial.resx">
       <DependentUpon>201609242147497_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250025427_Alter_EducationFacility.resx">
+      <DependentUpon>201609250025427_Alter_EducationFacility.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
+using HackathonServer.Models;
 
 namespace HackathonServer.Dtos
 {
@@ -14,7 +15,7 @@ namespace HackathonServer.Dtos
         [DataMember(Name = "fields")]
         public List<TypeIdDto> Fields { get; set; }
         [DataMember(Name = "records")]
-        public List<EducationFacilityDto> EducationFacilityDtos { get; set; }
+        public List<EducationFacility> EducationFacilityDtos { get; set; }
         [DataMember(Name = "_links")]
         public LinkDto Links { get; set; }
         [DataMember(Name = "total")]

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using HackathonServer.Migrations;
 using HackathonServer.Models;
+using HackathonServer.Shared;
 
 namespace HackathonServer.Controllers
 {
@@ -14,11 +15,6 @@ namespace HackathonServer.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-
-            using (var context = new HackathonContext())
-            {
-                DatabaseInitializer.Seed(context);
-            }
 
             return View();
         }
