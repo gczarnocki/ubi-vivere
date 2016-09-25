@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using HackathonServer.Dtos;
+using HackathonServer.Dtos.GMaps;
 using HackathonServer.Properties;
 using HackathonServer.Shared;
 using Newtonsoft.Json;
@@ -14,7 +15,7 @@ namespace HackathonServer.Models
     {
         public static void Seed(HackathonContext context)
         {
-            BusStopsSeed(context);
+            // BusStopsSeed(context);
             EducationFacilitiesSeed(context);
         }
 
@@ -66,6 +67,10 @@ namespace HackathonServer.Models
                 foreach (var item in jsonObj.InnerResult.EducationFacilityDtos)
                 {
                     context.EducationFacilities.AddOrUpdate(item);
+
+                    GMapsLocationDto location = GoogleMaps.RetrieveDataFromGoogleMaps(item);
+                    item.Longitude = location.Longitude;
+                    item.Latitude = location.Latitude;
                 }
 
                 context.SaveChanges();

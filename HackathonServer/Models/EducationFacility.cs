@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace HackathonServer.Dtos
+namespace HackathonServer.Models
 {
     [DataContract]
-    public class EducationFacilityDto
+    public class EducationFacility
     {
         [DataMember(Name = "_id")]
         public int Id { get; set; }
@@ -25,5 +25,12 @@ namespace HackathonServer.Dtos
         public string Telephone { get; set; }
         [DataMember(Name = "Rodzaj placówki")]
         public string FacilityType { get; set; }
+        [DataMember(Name = "Kategoria uczniów")]
+        public string UsersCategory { get; set; }
+        [DataMember(Name = "Publiczność")]
+        public string AudienceType { get; set; }
+
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
     }
 }

@@ -1,21 +1,11 @@
-<div class="row">
-    <form class="form-horizontal">
-
-        <div class="form-group" ng-repeat="p in $ctrl.preferences">
-            <div class="col-md-4">
-                {{p.name}}
-            </div>
-            <div class="col-md-1">
-                <radius-input radius="p.radius"></radius-input>
-            </div>
-            <div class="col-md-7">
-                <weigh-slider weigh="p.weigh"></weigh-slider>
-            </div>
+<form>
+    <div class="row" ng-repeat="p in $ctrl.preferences">
+        <div class="form-group">
+            <label>Wybierz priorytet bliskości {{p.genitiv}}:</label>
+            <weigh-slider weigh="p.weigh"></weigh-slider>
+            <label>Wybierz promień występowania obiektu:</label>
+            <radius-input radius="p.radius"></radius-input>
         </div>
-        <button type="submit" class="btn btn-default">Sprawdź lokalizacje</button>
-    </form>
-
-</div>
-
-
-
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
