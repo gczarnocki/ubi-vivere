@@ -91,33 +91,64 @@ namespace HackathonServer.Controllers
                         }
                     }
                 }
-                foreach (var busStop in busStops)
+                if (busStopWeight != 0 && educationWeight!=0)
                 {
-                    var startx = (((int)((busStop.X- gradX* GRADATION)/ gradX))+1)* gradX;
-                    var starty = (((int)((busStop.Y - gradY * GRADATION) / gradY)) + 1) * gradY;
-                    for (var i = startx; i < busStop.X+ busRadiusConvertedX; i+= gradX)
+                    foreach (var busStop in busStops)
                     {
-                        for (var j = starty; j < busStop.Y + busRadiusConvertedY; j+= gradY)
+                        var startx = (((int) ((busStop.X - gradX*GRADATION)/gradX)) + 1)*gradX;
+                        var starty = (((int) ((busStop.Y - gradY*GRADATION)/gradY)) + 1)*gradY;
+                        for (var i = startx; i < busStop.X + busRadiusConvertedX; i += gradX)
                         {
-                            for (int k = 0; k < busStopWeight; k++)
+                            for (var j = starty; j < busStop.Y + busRadiusConvertedY; j += gradY)
                             {
-                                if (hash.Item1.Contains(new PointDto() { X = i, Y = j }))
+                                for (int k = 0; k < busStopWeight; k++)
+                                {
+                                    if (hash.Item1.Contains(new PointDto() {X = i, Y = j}))
+                                    {
+                                        if (hash2.Item1.Add(new PointDto() {X = i, Y = j}))
+                                        {
+                                            hash2.Item2.Add(new PointDto() {X = i, Y = j}, 0);
+                                            hash2.Item2[new PointDto() {X = i, Y = j}] +=
+                                                hash.Item2[new PointDto() {X = i, Y = j}];
+                                        }
+                                        else
+                                        {
+                                            hash2.Item2[new PointDto() {X = i, Y = j}]++;
+                                        }
+                                    }
+                                }
+                                //buspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, busStopWeight));
+                            }
+                        }
+                    }
+                }
+                else if (educationWeight == 0 && busStopWeight != 0)
+                {
+                    foreach (var busStop in busStops)
+                    {
+                        var startx = (((int)((busStop.X - gradX * GRADATION) / gradX)) + 1) * gradX;
+                        var starty = (((int)((busStop.Y - gradY * GRADATION) / gradY)) + 1) * gradY;
+                        for (var i = startx; i < busStop.X + busRadiusConvertedX; i += gradX)
+                        {
+                            for (var j = starty; j < busStop.Y + busRadiusConvertedY; j += gradY)
+                            {
+                                for (int k = 0; k < busStopWeight; k++)
                                 {
                                     if (hash2.Item1.Add(new PointDto() { X = i, Y = j }))
                                     {
                                         hash2.Item2.Add(new PointDto() { X = i, Y = j }, 0);
-                                        hash2.Item2[new PointDto() { X = i, Y = j }]+= hash.Item2[new PointDto() { X = i, Y = j }];
                                     }
                                     else
                                     {
                                         hash2.Item2[new PointDto() { X = i, Y = j }]++;
                                     }
                                 }
+                                //educationspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, educationWeight));
                             }
-                            //buspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, busStopWeight));
                         }
                     }
                 }
+                
 
                 
 
@@ -125,9 +156,19 @@ namespace HackathonServer.Controllers
             //var edupo = educationspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
             //var buspo = buspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
             var points = new List<PointDto>();
-            foreach (var item in hash2.Item2)
+            if (busStopWeight == 0)
             {
-                points.AddRange(Enumerable.Repeat(item.Key, item.Value));
+                foreach (var item in hash.Item2)
+                {
+                    points.AddRange(Enumerable.Repeat(item.Key, item.Value));
+                }
+            }
+            else
+            {
+                foreach (var item in hash2.Item2)
+                {
+                    points.AddRange(Enumerable.Repeat(item.Key, item.Value));
+                }
             }
             /*if (busStopWeight != 0 && educationWeight != 0)
             {
