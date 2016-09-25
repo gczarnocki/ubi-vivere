@@ -29,8 +29,9 @@ namespace HackathonServer.Models
         public string UsersCategory { get; set; }
         [DataMember(Name = "Publiczność")]
         public string AudienceType { get; set; }
-
+        [DataMember(Name = "Longitude")]
         public double Longitude { get; set; }
+        [DataMember(Name = "Latitude")]
         public double Latitude { get; set; }
     }
 }
