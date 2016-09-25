@@ -14,5 +14,22 @@ namespace HackathonServer.Dtos
         public double Y { get; set; }
         [DataMember(Name = "x")]
         public double X { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var item = obj as PointDto;
+
+            if (item == null)
+            {
+                return false;
+            }
+
+            return this.Y.Equals(item.Y)&& this.X.Equals(item.X);
+        }
+
+        public override int GetHashCode()
+        {
+            return (this.X+1000000*Y).GetHashCode();
+        }
     }
 }
