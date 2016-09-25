@@ -12,9 +12,11 @@ namespace HackathonServer.Dtos
     [DataContract]
     public class BusStopDto
     {
-        [Column(Order = 0), DataMember(Name = "Y"), Key]
+        [DataMember(Name = "_id")]
+        public int Id { get; set; }
+        [DataMember(Name = "Y")]
         public double Y { get; set; }
-        [Column(Order = 1), DataMember(Name = "X"), Key]
+        [DataMember(Name = "X")]
         public double X { get; set; }
     }
 }
