@@ -6,10 +6,30 @@ angular.module('app.components')
   })
 
 function MapDisplayController(NgMap, constants) {
-  var vm = this;
+  var heatmap, vm = this;
 
   vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=" + constants.GOOGLE_API_KEY;
+  vm.showHeatmap = showHeatmap;
+  vm.data = [
+    new google.maps.LatLng(37.774546, -122.433523),
+    new google.maps.LatLng(37.774546, -122.433523),
+    new google.maps.LatLng(37.774546, -122.443523),
+    new google.maps.LatLng(37.774546, -122.453523)
+  ];
 
-  NgMap.getMap();
+  function createDataFromArray(array) {
 
+  };
+
+  function showHeatmap(map, data) {
+    heatmap = new google.maps.visualization.HeatmapLayer();
+    heatmap.setData(data);
+    heatmap.setMap(map);
+  };
+
+  NgMap.getMap().then(function(map) {
+      vm.map = map;
+    });
+
+  return vm;
 }

@@ -1,0 +1,6 @@
+<div class="row">
+  <profile-selector selected-profile="lp.selectedProfile"
+  ng-if="lp.mode == 0 && lp.selectedProfile === null"
+  mode="lp.mode""></profile-selector>
+  <preferences-form preferences="lp.preferences" ng-if="lp.mode == 1 || lp.selectedProfile !== null"></preferences-form>
+</div>
