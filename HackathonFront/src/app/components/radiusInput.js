@@ -13,7 +13,7 @@ function RadiusInputCtrl (preferencesProvider) {
   vm.preferencesP = preferencesProvider;
   vm.options = {
     hideLimitLabels: true,
-    showTicks: true,
+    showTicks: false,
     stepsArray: [
       {value: 250, legend: ''},
       {value: 500, legend: ''},

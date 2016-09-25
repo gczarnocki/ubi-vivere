@@ -1,3 +1,12 @@
+$font-size-base: 12px;
+// $gray-base: #2E5D70;
+// $body-bg: #eee;
+// $text-color: #272932;
+
+// $hr-border: $gray-base;
+
+// $navbar-default-bg: #2E5D70;
+// $navbar-default-color: $body-bg;
 // bower:scss
 // endbower
 
@@ -10,6 +19,18 @@ body {
   border-bottom: 1px #000 solid;
 }
 
-.map-canvas {
-  height: 400px;
+.map-display {
+  height: 500px;
+}
+
+.slider-margin {
+  padding-top: -20px;
+}
+
+// .slider-label-margin {
+//   padding-top: 20px;
+//   margin-top: 20px;
+// }
+.rzslider {
+  margin-top: 25px !important;
 }

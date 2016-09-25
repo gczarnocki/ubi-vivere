@@ -1,11 +1,12 @@
 <div class="container-fluid">
-<form>
+  <form>
     <div class="row" ng-repeat="p in $ctrl.preferencesP.preferences">
-        <div class="form-group">
-            <weigh-slider weigh="p.weigh"></weigh-slider>
-            <radius-input radius="p.radius" weigh="p.weigh"></radius-input>
-        </div>
+      <div class="form-group slider-margin">
+          <weigh-slider weigh="p.weigh"></weigh-slider>
+          <radius-input ng-hide="p.weigh ==0" radius="p.radius" weigh="p.weigh"></radius-input>
+      <hr>
+      </div>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
-</form>
+  </form>
 </div>
