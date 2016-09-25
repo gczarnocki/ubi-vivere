@@ -17,7 +17,7 @@ namespace HackathonServer.Migrations
                 .PrimaryKey(t => new { t.Y, t.X });
             
             CreateTable(
-                "dbo.EducationFacilityDto",
+                "dbo.EducationFacility",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -37,7 +37,7 @@ namespace HackathonServer.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.EducationFacilityDto");
+            DropTable("dbo.EducationFacility");
             DropTable("dbo.BusStopDto");
         }
     }

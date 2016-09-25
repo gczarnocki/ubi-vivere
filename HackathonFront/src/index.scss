@@ -1,2 +1,15 @@
 // bower:scss
 // endbower
+
+body {
+  padding-top: 70px;
+}
+
+.profileSelector {
+  border-top: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+
+.map-canvas {
+  height: 400px;
+}

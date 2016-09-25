@@ -3,19 +3,34 @@ angular.module('app.components')
     templateUrl: 'app/components/radiusInput.html',
     controller: RadiusInputCtrl,
     bindings: {
-      radius: '='
+      radius: '=',
+      weigh: '='
     }
   })
 
 function RadiusInputCtrl () {
   var vm = this;
-  vm.radius = 1;
-  vm.inputRadius = 1;
+  vm.radius = 250;
+  
+  vm.options = {
+    hideLimitLabels: true,
+    showTicks: true,
+    stepsArray: [
+      {value: 250, legend: ''},
+      {value: 500, legend: ''},
+      {value: 750, legend: ''},
+      {value: 1000, legend: '1000m'},
+      {value: 1250, legend: ''},
+      {value: 1500, legend: ''},
+      {value: 1750, legend: ''},
+      {value: 2000, legend: '2000m'}
+    ],
+    translate: function(value) {
+      return value + 'm';
+      }
+    };
 
-  vm.updateRadius = function(r) {
-    vm.radius = Math.max(r,0);
-    vm.inputRadius = vm.radius;
-   };
-
-  return vm
+  return vm;
 }
+
+

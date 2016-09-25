@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web.Management;
 
 namespace HackathonServer.Shared
 {
@@ -14,14 +16,23 @@ namespace HackathonServer.Shared
         public static async Task<string> CreateRequest(string requestAddress)
         {
             var request = (HttpWebRequest)WebRequest.Create(requestAddress + ApiKeys.ApiKeyParam);
+            request.Proxy = null;
+            request.AutomaticDecompression = DecompressionMethods.GZip;
 
-            using (var client = new HttpClient())
+            var result = string.Empty;
+
+            using (var stream = request.GetResponse().GetResponseStream())
             {
-                var response = await client.GetAsync(requestAddress);
-                var responseString = await response.Content.ReadAsStringAsync();
-
-                return responseString;
+                if (stream != null)
+                {
+                    using (var reader = new StreamReader(stream))
+                    {
+                        result = reader.ReadToEnd();
+                    }
+                }
             }
+
+            return result;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace HackathonServer.Models
     {
         public HackathonContext() : base("name=HackathonContext")
         {
-            Database.SetInitializer<HackathonContext>(new DropCreateDatabaseAlways<HackathonContext>());
+            Database.SetInitializer<HackathonContext>(new DropCreateDatabaseIfModelChanges<HackathonContext>());
             InitializeDatabase();
         }
 
@@ -36,8 +36,7 @@ namespace HackathonServer.Models
             }
         }
 
-        public virtual DbSet<EducationFacilityDto> EducationFacilities { get; set; }
-
+        public virtual DbSet<EducationFacility> EducationFacilities { get; set; }
         public virtual DbSet<BusStopDto> BusStops { get; set; }
     }
 }
