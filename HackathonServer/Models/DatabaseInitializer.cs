@@ -23,6 +23,7 @@ namespace HackathonServer.Models
         {
             using (var sr = new StringReader(Resources.rozklad))
             {
+                var i = 0;
                 while (sr.Peek() >= 0)
                 {
                     var line = sr.ReadLine();
@@ -34,8 +35,12 @@ namespace HackathonServer.Models
                     {
                         var y = double.Parse(line.Substring(line.IndexOf("Y=") + 3, 9).Replace(".", ","));
                         var x = double.Parse(line.Substring(line.IndexOf("X=") + 3, 9).Replace(".", ","));
-
+                        i++;
                         context.BusStops.AddOrUpdate(new BusStopDto() { Y = y, X = x });
+                        if (i % 100 == 0)
+                        {
+                            context.SaveChanges();
+                        }
                     }
                     catch (Exception)
                     {
