@@ -9,7 +9,6 @@ angular.module('app.components')
 
 function WeighSliderCtrl () {
   var vm = this;
-  vm.weigh = 1;
 
   vm.options = {
     showTicksValues: true,

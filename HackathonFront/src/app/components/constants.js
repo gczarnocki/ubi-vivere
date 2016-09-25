@@ -8,45 +8,46 @@ angular.module('app.components')
       {
           id:"PRZ",
           name:"Przedszkole",
-          radius: 0,
-          weigh: 1
+          radius: 750,
+          weigh: 3
       }, {
           id:"SP",
           name:"Szkoła podstawowa",
-          radius: 0,
+          radius: 250,
           weigh: 2
       }, {
           id:"GIM",
           name:"Gimnazjum",
-          radius: 0,
+          radius: 250,
           weigh: 0
       }, {
           id:"LIC",
           name:"Liceum",
-          radius: 0,
+          radius: 250,
           weigh: 1
-      }]}, {
+      }]},
+       {
       _id: 1,
       name: "name2",
       preferences: [{
           id:"PRZ",
           name:"Przedszkole",
-          radius: 0,
+          radius: 1000,
           weigh: 2
       }, {
           id:"SP",
           name:"Szkoła podstawowa",
-          radius: 0,
+          radius: 1000,
           weigh: 0
       }, {
           id:"GIM",
           name:"Gimnazjum",
-          radius: 0,
-          weigh: 5
+          radius: 1000,
+          weigh: 3
       }, {
           id:"LIC",
           name:"Liceum",
-          radius: 0,
+          radius: 1000,
           weigh: 1
       }]}
       ]

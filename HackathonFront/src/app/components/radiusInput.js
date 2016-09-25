@@ -8,10 +8,9 @@ angular.module('app.components')
     }
   })
 
-function RadiusInputCtrl () {
+function RadiusInputCtrl (preferencesProvider) {
   var vm = this;
-  vm.radius = 250;
-  
+  vm.preferencesP = preferencesProvider;
   vm.options = {
     hideLimitLabels: true,
     showTicks: true,

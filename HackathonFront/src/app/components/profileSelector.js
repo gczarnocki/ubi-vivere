@@ -4,21 +4,22 @@ angular.module('app.components')
     controller: ProfileSelectorCtrl,
     controllerAs: 'profileSelector',
     bindings: {
-      onSelect: '&',
       mode: '='
     }
   });
 
-function ProfileSelectorCtrl (constants) {
+function ProfileSelectorCtrl (constants, preferencesProvider) {
   var vm = this;
   vm.selectedProfile = null;
   vm.toggleMode = toggleMode;
-
+  vm.preferences = preferencesProvider.preferences;
   vm.profiles = constants.profiles;
 
   vm.selectProfile = function(id) {
-    vm.selectedProfile = vm.profiles[id];
-    vm.onSelect(vm.selectedProfile);
+    preferencesProvider.preferences = constants.profiles[id].preferences;
+    console.log(preferencesProvider.preferences);
+    vm.selectedProfile = constants.profiles[id];
+    vm.toggleMode();
   };
 
   function toggleMode() {
