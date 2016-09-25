@@ -1,5 +1,8 @@
 <div class="container-fluid">
   <h3>Wybierz odpowiadający Ci profil...</h3>
-  <profile-type ng-repeat="profile in profileSelector.profiles" profile="profile" on-select="profileSelector.selectProfile($index)"></profile-type>
-  <h3><a ng-click="profileSelector.toggleMode()">...Lub weź sprawy w swoje ręce! &raquo;</a></h3>
+  <div ng-repeat="profile in profileSelector.profiles">
+  <profile-type
+    profile="profile" on-select="profileSelector.selectProfile($index)"></profile-type>
+  </div>
+  <h4><a ng-click="profileSelector.toggleMode()">...lub weź sprawy w swoje ręce! &raquo;</a></h4>
 </div>

@@ -1,15 +1,12 @@
 angular.module('app.components')
   .component('preferencesForm', {
     templateUrl: 'app/components/preferencesForm.html',
-    controller: PreferencesFormCtrl,
-    bindings: {
-      value: '<',
-      preferences: '='
-    }
+    controller: PreferencesFormCtrl
   })
 
-function PreferencesFormCtrl () {
+function PreferencesFormCtrl (preferencesProvider) {
   var vm = this;
+  vm.preferencesP = preferencesProvider;
 
   return vm;
 }
