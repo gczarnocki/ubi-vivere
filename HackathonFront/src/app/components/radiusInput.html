@@ -1,1 +1,2 @@
-<rzslider rz-slider-model="$ctrl.radius" rz-slider-options="$ctrl.options" class="with-legend" ></rzslider>
+<label visible="$ctrl.weigh > 0">Wybierz promień występowania obiektu:</label>
+<rzslider rz-slider-model="$ctrl.radius" rz-slider-options="$ctrl.options" class="with-legend" ng-hide="$ctrl.weigh==0" ></rzslider>

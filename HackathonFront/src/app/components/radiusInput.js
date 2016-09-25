@@ -3,7 +3,8 @@ angular.module('app.components')
     templateUrl: 'app/components/radiusInput.html',
     controller: RadiusInputCtrl,
     bindings: {
-      radius: '='
+      radius: '=',
+      weigh: '='
     }
   })
 
