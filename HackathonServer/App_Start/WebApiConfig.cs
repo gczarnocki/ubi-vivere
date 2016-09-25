@@ -21,10 +21,12 @@ namespace HackathonServer
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
-            config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
+            // var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
+            // config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
 
-            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            // config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
     }
 }
