@@ -16,7 +16,7 @@ namespace HackathonServer.Models
         public static void Seed(HackathonContext context)
         {
             // BusStopsSeed(context);
-            EducationFacilitiesSeed(context);
+            //EducationFacilitiesSeed(context);
         }
 
         public static void BusStopsSeed(HackathonContext context)
