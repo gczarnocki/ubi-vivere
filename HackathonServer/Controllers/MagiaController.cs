@@ -54,6 +54,8 @@ namespace HackathonServer.Controllers
             var buspoints = new List<PointDto>();
             var hash = new Tuple<HashSet<PointDto>, Dictionary<PointDto, int>>(new HashSet<PointDto>(),
                 new Dictionary<PointDto, int>());
+            var hash2 = new Tuple<HashSet<PointDto>, Dictionary<PointDto, int>>(new HashSet<PointDto>(),
+                new Dictionary<PointDto, int>());
             var educationspoints = new List<PointDto>();
             var mingrad = Math.Min(educationRadius, busStopRadius)/GRADATION;
             var gradX = mingrad/xMultiplier;
@@ -74,18 +76,18 @@ namespace HackathonServer.Controllers
                     {
                         for (var j = starty; j < education.Longitude + educationRadiusConvertedY; j += gradY)
                         {
-                            /*for (int k = 0; k < educationWeight; k++)
+                            for (int k = 0; k < educationWeight; k++)
                             {
                                 if (hash.Item1.Add(new PointDto() {X = i, Y = j}))
                                 {
-                                    hash.Item2.Add(new PointDto(), 0);
+                                    hash.Item2.Add(new PointDto() { X = i, Y = j }, 0);
                                 }
                                 else
                                 {
                                     hash.Item2[new PointDto() {X = i, Y = j}]++;
                                 }
-                            }*/
-                            educationspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, educationWeight));
+                            }
+                            //educationspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, educationWeight));
                         }
                     }
                 }
@@ -97,7 +99,22 @@ namespace HackathonServer.Controllers
                     {
                         for (var j = starty; j < busStop.Y + busRadiusConvertedY; j+= gradY)
                         {
-                            buspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, busStopWeight));
+                            for (int k = 0; k < busStopWeight; k++)
+                            {
+                                if (hash.Item1.Contains(new PointDto() { X = i, Y = j }))
+                                {
+                                    if (hash2.Item1.Add(new PointDto() { X = i, Y = j }))
+                                    {
+                                        hash2.Item2.Add(new PointDto() { X = i, Y = j }, 0);
+                                        hash2.Item2[new PointDto() { X = i, Y = j }]+= hash.Item2[new PointDto() { X = i, Y = j }];
+                                    }
+                                    else
+                                    {
+                                        hash2.Item2[new PointDto() { X = i, Y = j }]++;
+                                    }
+                                }
+                            }
+                            //buspoints.AddRange(Enumerable.Repeat(new PointDto() { X = i, Y = j }, busStopWeight));
                         }
                     }
                 }
@@ -105,10 +122,14 @@ namespace HackathonServer.Controllers
                 
 
             }
-            var edupo = educationspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
-            var buspo = buspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
+            //var edupo = educationspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
+            //var buspo = buspoints.AsParallel().GroupBy(s => s).Select(g => new Points() { Point = g.Key, Count = g.Count() });
             var points = new List<PointDto>();
-            if (busStopWeight != 0 && educationWeight != 0)
+            foreach (var item in hash2.Item2)
+            {
+                points.AddRange(Enumerable.Repeat(item.Key, item.Value));
+            }
+            /*if (busStopWeight != 0 && educationWeight != 0)
             {
                 foreach (var edu in edupo)
                 {
@@ -128,7 +149,7 @@ namespace HackathonServer.Controllers
                 {
                     points.AddRange(buspoints);
                 }
-            }
+            }*/
             
             return points.ToArray();
         }
