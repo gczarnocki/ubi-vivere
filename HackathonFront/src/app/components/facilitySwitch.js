@@ -23,5 +23,7 @@ function FacilitySwitchCtrl () {
     }
   };
 
+
+
   return vm;
 }

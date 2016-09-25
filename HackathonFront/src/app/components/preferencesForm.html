@@ -1,12 +1,10 @@
 <form>
-    <div class="containger" ng-repeat="p in $ctrl.preferences">
+    <div class="row" ng-repeat="p in $ctrl.preferences">
         <div class="form-group">
-            <label>Uwzględnić obiekt {{p.name}}?</label>
-            <facility-switch is-switch-on="p.isSwitchOn"></facility-switch>
+            <label>Wybierz priorytet bliskości {{p.genitiv}}:</label>
+            <weigh-slider weigh="p.weigh"></weigh-slider>
             <label>Wybierz promień występowania obiektu:</label>
             <radius-input radius="p.radius"></radius-input>
-            <label>Wybierz priorytet:</label>
-            <weigh-slider weigh="p.weigh"></weigh-slider>
         </div>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>

@@ -15,6 +15,7 @@ function WeighSliderCtrl () {
     showTicksValues: true,
     hideLimitLabels: true,
     stepsArray: [
+      {value: 0, legend: 'Brak'},
       {value: 1, legend: 'Niski'},
       {value: 2, legend: 'Średni'},
       {value: 3, legend: 'Wysoki'}
