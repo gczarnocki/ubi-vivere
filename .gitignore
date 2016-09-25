@@ -78,6 +78,7 @@ _[Ss]cripts
 # Others #
 ##########
 
-HackathonServer/App_Data
+HackathonServer/App_Data/*.*
 *.mdf
 *.ldf
+.vs/config/applicationhost.config
