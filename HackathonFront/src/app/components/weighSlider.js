@@ -9,9 +9,20 @@ angular.module('app.components')
 
 function WeighSliderCtrl () {
   var vm = this;
-  vm.weigh = 0;
-  vm.minWeigh = 0;
-  vm.maxWeigh = 10;
+  vm.weigh = 1;
 
-  return vm
+  vm.options = {
+    showTicksValues: true,
+    hideLimitLabels: true,
+    stepsArray: [
+      {value: 1, legend: 'Niski'},
+      {value: 2, legend: 'Średni'},
+      {value: 3, legend: 'Wysoki'}
+    ],
+    translate: function(value) {
+      return '';
+    }
+  };
+
+  return vm;
 }

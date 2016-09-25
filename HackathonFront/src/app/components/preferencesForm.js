@@ -13,25 +13,29 @@ function PreferencesFormCtrl () {
       {
           id:"PRZ",
           name:"Przedszkole",
-          radius: 0,
-          weigh: 0
+          isSwitchOn:false,
+          radius: 250,
+          weigh: 1
       }, {
           id:"SP",
           name:"Szkoła podstawowa",
-          radius: 0,
-          weigh: 0
+          isSwitchOn:false,
+          radius: 250,
+          weigh: 1
       }, {
           id:"GIM",
           name:"Gimnazjum",
-          radius: 0,
-          weigh: 0
+          isSwitchOn:false,
+          radius: 250,
+          weigh: 1
       }, {
           id:"LIC",
           name:"Liceum",
-          radius: 0,
-          weigh: 0
+          isSwitchOn:false,
+          radius: 250,
+          weigh: 1
       }
-  ]
+  ];
 
-  return vm
+  return vm;
 }
