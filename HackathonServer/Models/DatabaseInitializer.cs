@@ -35,7 +35,10 @@ namespace HackathonServer.Models
                         var y = double.Parse(line.Substring(line.IndexOf("Y=") + 3, 9).Replace(".", ","));
                         var x = double.Parse(line.Substring(line.IndexOf("X=") + 3, 9).Replace(".", ","));
 
-                        context.BusStops.AddOrUpdate(new BusStopDto() {Y = y, X = x});
+                        if (!context.BusStops.Any(b => b.Y == y && b.X == x))
+                        {
+                            context.BusStops.AddOrUpdate(new BusStopDto() { Y = y, X = x });
+                        }
                     }
                     catch (Exception)
                     {
